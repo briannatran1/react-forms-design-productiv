@@ -61,7 +61,7 @@ function TodoForm() {
               <option value={3}>Meh</option>
             </select>
           </div>
-          <button className="btn-primary rig btn btn-sm NewTodoForm-addBtn">
+          <button className="btn-primary  btn btn-sm NewTodoForm-addBtn">
             Gø!
           </button>
         </div>
