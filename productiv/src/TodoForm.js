@@ -10,18 +10,8 @@ import React, { useState } from "react";
  * { TodoApp, EditableTodo } -> TodoForm
  */
 
-function TodoForm({ initialFormData = {
-  title: '',
-  description: '',
-  priority: 1
-}, handleSave }) {
-
-  const initalState = {
-    title: '',
-    description: '',
-    priority: 1
-  };
-  const [formData, setFormData] = useState(initalState);
+function TodoForm({ initialFormData , handleSave }) {
+  const [formData, setFormData] = useState(initialFormData);
 
   /** Update form input. */
   function handleChange(evt) {
@@ -37,7 +27,7 @@ function TodoForm({ initialFormData = {
   function handleSubmit(evt) {
     evt.preventDefault();
     handleSave(formData);
-    setFormData(initalState);
+    setFormData(initialFormData);
   }
 
   return (
@@ -50,7 +40,7 @@ function TodoForm({ initialFormData = {
           className="form-control"
           placeholder="Title"
           onChange={handleChange}
-          value={initialFormData.title}
+          value={formData.title}
           aria-label="Title"
         />
       </div>
@@ -62,7 +52,7 @@ function TodoForm({ initialFormData = {
           className="form-control"
           placeholder="Description"
           onChange={handleChange}
-          value="FIXME"
+          value={formData.description}
           aria-label="Description"
         />
       </div>
@@ -74,7 +64,7 @@ function TodoForm({ initialFormData = {
           </label>
           <select id="newTodo-priority"
             name="priority"
-            value="FIXME"
+            value={formData.priority}
             onChange={handleChange}
             className="form-control form-control-sm d-inline-flex"
           >
@@ -83,7 +73,8 @@ function TodoForm({ initialFormData = {
             <option value={3}>Meh</option>
           </select>
         </div>
-        <button className="btn-primary  btn btn-sm NewTodoForm-addBtn">
+        {/* what is rig? */}
+        <button className="btn-primary rig btn btn-sm NewTodoForm-addBtn">
           Gø!
         </button>
       </div>

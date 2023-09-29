@@ -26,7 +26,6 @@ function TodoApp({ initialTodos = [] }) {
   }
 
   /** update a todo with updatedTodo */
-  //FIXME: 95% confident this works
   function update(updatedTodo) {
     setTodos(todos => todos.map(
       t => t.id !== updatedTodo.id ? t : updatedTodo)
@@ -42,6 +41,7 @@ function TodoApp({ initialTodos = [] }) {
       <div className="row">
 
         <div className="col-md-6">
+        <h3 className="mb-3">Todos</h3>
           {todos.length !== 0
             ? <EditableTodoList
               todos={todos}
@@ -61,7 +61,9 @@ function TodoApp({ initialTodos = [] }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            <TodoForm handleSave={create} />
+            <TodoForm
+              handleSave={create}
+              initialFormData={{title: '', description: '', priority: 1}} />
           </section>
         </div>
 
