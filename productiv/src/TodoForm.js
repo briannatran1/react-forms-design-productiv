@@ -11,9 +11,9 @@ import React, { useState } from "react";
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */
-const defaultFormData = {title: '', description: '', priority: 1}
+const defaultFormData = { title: '', description: '', priority: 1 };
 
-function TodoForm({ initialFormData=defaultFormData , handleSave }) {
+function TodoForm({ initialFormData = defaultFormData, handleSave }) {
   const [formData, setFormData] = useState(initialFormData);
 
   /** Update form input. */

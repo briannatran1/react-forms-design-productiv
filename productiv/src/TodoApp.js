@@ -9,7 +9,9 @@ import TodoForm from "./TodoForm";
  *
  * Props:
  * - initialTodos: possible array of [ todo, ... ]
- * //TODO: describe todo obj
+ *
+ * todo: like { id, title, description, priority }
+ *
  * State:
  * - todos: array of [ todo, ... ]
  *
@@ -36,12 +38,13 @@ function TodoApp({ initialTodos = [] }) {
   function remove(id) {
     setTodos(todos => todos.filter(t => t.id !== id));
   }
+
   return (
     <main className="TodoApp">
       <div className="row">
 
         <div className="col-md-6">
-        <h3 className="mb-3">Todos</h3>
+          <h3 className="mb-3">Todos</h3>
           {todos.length !== 0
             ? <EditableTodoList
               todos={todos}
@@ -61,11 +64,10 @@ function TodoApp({ initialTodos = [] }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
-            {/* TODO: have initial form data live in the form component as constant,
+            {/*have initial form data live in the form component as constant,
             instead of passing it as a prop */}
             <TodoForm
-              handleSave={create}
-              initialFormData={{title: '', description: '', priority: 1}} />
+              handleSave={create} />
           </section>
         </div>
 

@@ -4,7 +4,8 @@ import TodoForm from "./TodoForm";
 
 /** Show editable todo item.
  *
- * TODO: add state
+ * State:
+ * - isEditing: true or false
  *
  * Props
  * - todo
@@ -51,8 +52,11 @@ function EditableTodo({ todo, update, remove }) {
               Del
             </button>
           </div>
-          {/* TODO: Be explicit with passing properties */}
-          <Todo {...todo} />
+          <Todo
+            id={todo.id}
+            title={todo.title}
+            description={todo.description}
+            priority={todo.priority} />
         </div>}
 
     </div>
