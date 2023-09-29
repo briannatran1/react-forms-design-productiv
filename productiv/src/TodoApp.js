@@ -9,7 +9,7 @@ import TodoForm from "./TodoForm";
  *
  * Props:
  * - initialTodos: possible array of [ todo, ... ]
- *
+ * //TODO: describe todo obj
  * State:
  * - todos: array of [ todo, ... ]
  *
@@ -61,6 +61,8 @@ function TodoApp({ initialTodos = [] }) {
 
           <section>
             <h3 className="mb-3">Add Nü</h3>
+            {/* TODO: have initial form data live in the form component as constant,
+            instead of passing it as a prop */}
             <TodoForm
               handleSave={create}
               initialFormData={{title: '', description: '', priority: 1}} />

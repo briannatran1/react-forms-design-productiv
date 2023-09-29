@@ -4,6 +4,8 @@ import TodoForm from "./TodoForm";
 
 /** Show editable todo item.
  *
+ * TODO: add state
+ *
  * Props
  * - todo
  * - update(): fn to call to update a todo
@@ -21,7 +23,7 @@ function EditableTodo({ todo, update, remove }) {
   }
 
   /** Call remove fn passed to this. */
-  function handleDelete(evt) {
+  function handleDelete() {
     remove(todo.id);
   }
 
@@ -49,6 +51,7 @@ function EditableTodo({ todo, update, remove }) {
               Del
             </button>
           </div>
+          {/* TODO: Be explicit with passing properties */}
           <Todo {...todo} />
         </div>}
 

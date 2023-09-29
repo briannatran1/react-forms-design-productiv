@@ -3,14 +3,17 @@ import React, { useState } from "react";
 
 /** Form for adding.
  *
+ * TODO: add state
+ *
  * Props:
  * - initialFormData
  * - handleSave: function to call in parent.
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */
+const defaultFormData = {title: '', description: '', priority: 1}
 
-function TodoForm({ initialFormData , handleSave }) {
+function TodoForm({ initialFormData=defaultFormData , handleSave }) {
   const [formData, setFormData] = useState(initialFormData);
 
   /** Update form input. */
