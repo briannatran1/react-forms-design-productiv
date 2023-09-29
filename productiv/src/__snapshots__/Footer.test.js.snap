@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`footer component matches snapshot 1`] = `
+<DocumentFragment>
+  <footer
+    class="App-footer mt-5 text-muted"
+  >
+    <small>
+      Prødutïv is copyright ©2020 by Flüffy Data Enterprises, Inc.
+    </small>
+  </footer>
+</DocumentFragment>
+`;
