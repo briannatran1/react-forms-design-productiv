@@ -1,8 +1,8 @@
 import React from "react";
 import { render } from "@testing-library/react";
-import TopTodo from "./TopTodo";
+import TodoApp from "./TodoApp";
 
-describe('TopTodo component', function () {
+describe("TodoApp", function () {
   const todos = [{
     id: 1,
     title: 'testing',
@@ -17,26 +17,19 @@ describe('TopTodo component', function () {
   }
   ];
 
-  test('renders without crashing', function () {
-    render(<TopTodo todos={todos} />);
-  });
+  test("renders without crashing", function() {
+    render(<TodoApp initialTodos={todos}/>)
+  })
 
   test('matches snapshot', function () {
-    const { asFragment } = render(<TopTodo todos={todos} />);
+    const { asFragment } = render(
+      <TodoApp initialTodos={todos}/>);
     expect(asFragment()).toMatchSnapshot();
   });
 
-  test('contains only highest priority todo', function () {
-    const { queryByText, container } = render(<TopTodo todos={todos} />);
+  test('shows no todos properly', function () {
 
-    expect(queryByText('eat')).toBeInTheDocument();
-    expect(queryByText('(Priority: 1)')).toBeInTheDocument();
-    expect(queryByText('eat lunch')).toBeInTheDocument();
+  })
 
-    expect(container.querySelectorAll('.Todo').length).toEqual(1);
 
-    expect(queryByText('testing')).not.toBeInTheDocument();
-    expect(queryByText('finish testing')).not.toBeInTheDocument();
-    expect(queryByText('(Priority: 2)')).not.toBeInTheDocument();
-  });
-});
+})
