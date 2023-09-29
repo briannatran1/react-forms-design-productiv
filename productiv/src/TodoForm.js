@@ -3,11 +3,12 @@ import React, { useState } from "react";
 
 /** Form for adding.
  *
- * TODO: add state
- *
  * Props:
  * - initialFormData
  * - handleSave: function to call in parent.
+ *
+ * State:
+ * - formData like {title: '', description: '', priority: 1}
  *
  * { TodoApp, EditableTodo } -> TodoForm
  */
@@ -76,7 +77,6 @@ function TodoForm({ initialFormData = defaultFormData, handleSave }) {
             <option value={3}>Meh</option>
           </select>
         </div>
-        {/* what is rig? */}
         <button className="btn-primary rig btn btn-sm NewTodoForm-addBtn">
           Gø!
         </button>
